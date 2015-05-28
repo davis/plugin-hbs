@@ -1,7 +1,8 @@
 'use strict';
 
-import Handlebars from 'handlebars';
+export function translate(load) {
+  console.log(`compiling template: ${load.name}`);
+  return `import Handlebars from 'handlebars';
 
-export function translate(load)  {
-  load.source = Handlebars.compile(load);
+export default Handlebars.compile(` + load.source + `)`;
 }
