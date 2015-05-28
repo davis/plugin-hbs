@@ -2,7 +2,6 @@
 
 export function translate(load) {
   console.log(`compiling template: ${load.name}`);
-  return `import Handlebars from 'handlebars';
-
-export default Handlebars.compile(` + load.source + `)`;
+  const escaped = load.source.replace('`', '\\`');
+  return `import Handlebars from 'handlebars';\n\nexport default Handlebars.compile(${escaped})`;
 }

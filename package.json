@@ -9,6 +9,6 @@
       "babel-runtime": "npm:babel-runtime@^5.4.3",
       "core-js": "npm:core-js@^0.9.10"
     },
-    "main": "hbs.js"
+    "main": "hbs"
   }
 }
