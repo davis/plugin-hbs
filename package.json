@@ -1,0 +1,13 @@
+{
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "handlebars": "github:components/handlebars.js@^3.0.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.4.3",
+      "babel-runtime": "npm:babel-runtime@^5.4.3",
+      "core-js": "npm:core-js@^0.9.10"
+    }
+  }
+}
