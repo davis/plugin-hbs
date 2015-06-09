@@ -1,8 +1,7 @@
-'use strict';
-
 export function translate(load) {
   console.log('compiling template:', load.name);
   load.source = 'module.exports = require(\'handlebars\').compile(\'' + load.source
+  .replace(/'/g, '\\\'')
   .replace(/[\f]/g, '\\f')
   .replace(/[\b]/g, '\\b')
   .replace(/[\n]/g, '\\n')
