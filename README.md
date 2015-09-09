@@ -4,7 +4,7 @@ Handlebars template loader plugin for system.js
 ## Installation
 
 ```bash
-jspm install hbs=github:davis/plugin-hbs
+jspm install hbs
 ```
 
 ## Usage
@@ -22,3 +22,5 @@ export default ItemView.extend({
   initialize() {}
 });
 ```
+
+Head over to https://github.com/davis/jspm-marionette to see a working example that uses this plugin.
