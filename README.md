@@ -24,3 +24,5 @@ export default ItemView.extend({
 ```
 
 Head over to https://github.com/davis/jspm-marionette to see a working example that uses this plugin.
+
+NOTE: This does not currently work when creating bundles. (In progress!)
