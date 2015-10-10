@@ -2,6 +2,9 @@
 
 import Handlebars from 'handlebars';
 
-export function instantiate(load) {
-  return Handlebars.compile(load.source);
+const handlebarsRuntimePath = System.normalizeSync('handlebars/handlebars.runtime', __moduleName);
+
+export function translate(load) {
+  var precompiled = Handlebars.precompile(load.source);
+  load.source = `module.exports = require('${handlebarsRuntimePath}').template(${precompiled});`;
 }
