@@ -23,4 +23,22 @@ export default ItemView.extend({
 });
 ```
 
+To use helpers, be sure to use the Handlebars runtime. You'll need to have Handlebars installed in your project.
+
+js:
+```javascript
+'use strict';
+
+import Handlebars from 'handlebars/handlebars.runtime';
+
+Handlebars.registerHelper('wrapWithMoo', (options) => {
+  return new Handlebars.SafeString(`moo! ${options.fn(this)} moo!`);
+});
+```
+
+template:
+```handlebars
+<p>{{#wrapWithMoo}}(this should be surrounded by the sound a cow makes){{/wrapWithMoo}}</p>
+```
+
 Head over to https://github.com/davis/jspm-marionette to see a working example that uses this plugin.
