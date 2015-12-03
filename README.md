@@ -11,6 +11,20 @@ jspm install hbs
 
 You can now import your .hbs files as such:
 
+### jQuery
+```javascript
+'use strict';
+import $ from 'jquery';
+
+import template from './template.hbs!';
+import data from './data.json!';
+
+const html = template(data);
+
+$('#content').html(html);
+```
+
+### Marionette
 ```javascript
 'use strict';
 
@@ -23,6 +37,7 @@ export default ItemView.extend({
 });
 ```
 
+### How to use helpers
 To use helpers, be sure to use the Handlebars runtime. You'll need to have Handlebars installed in your project.
 
 js:
