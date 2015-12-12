@@ -1,5 +1,5 @@
 # plugin-hbs
-Handlebars template loader plugin for system.js
+Handlebars template loader plugin for SystemJS
 
 ## Installation
 
@@ -9,7 +9,7 @@ jspm install hbs
 
 ## Usage
 
-You can now import your .hbs files as such:
+You can now import your `.hbs` files as such:
 
 ### jQuery
 ```javascript
@@ -40,7 +40,8 @@ export default ItemView.extend({
 ### How to use helpers
 To use helpers, be sure to use the Handlebars runtime. You'll need to have Handlebars installed in your project.
 
-js:
+**JavaScript**
+
 ```javascript
 'use strict';
 
@@ -51,7 +52,8 @@ Handlebars.registerHelper('wrapWithMoo', (options) => {
 });
 ```
 
-template:
+**Handlebars**
+
 ```handlebars
 <p>{{#wrapWithMoo}}(this should be surrounded by the sound a cow makes){{/wrapWithMoo}}</p>
 ```
@@ -59,7 +61,8 @@ template:
 ### How to use partials
 The use of partials is quite similar to helpers. Just be sure to use the Handlebars runtime.
 
-js:
+**JavaScript**
+
 ```javascript
 'use strict';
 
@@ -69,9 +72,12 @@ import myPartial from './myPartial.hbs!';
 Handlebars.registerPartial('myPartial', myPartial);
 ```
 
-template:
+**Handlebars**
+
 ```handlebars
 {{> myPartial }}
 ```
+
+***
 
 Head over to https://github.com/davis/jspm-marionette to see a working example that uses this plugin.
