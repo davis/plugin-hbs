@@ -56,4 +56,22 @@ template:
 <p>{{#wrapWithMoo}}(this should be surrounded by the sound a cow makes){{/wrapWithMoo}}</p>
 ```
 
+### How to use partials
+The use of partials is quite similar to helpers. Just be sure to use the Handlebars runtime.
+
+js:
+```javascript
+'use strict';
+
+import Handlebars from 'handlebars/handlebars.runtime';
+import myPartial from './myPartial.hbs!';
+
+Handlebars.registerPartial('myPartial', myPartial);
+```
+
+template:
+```handlebars
+{{> myPartial }}
+```
+
 Head over to https://github.com/davis/jspm-marionette to see a working example that uses this plugin.
