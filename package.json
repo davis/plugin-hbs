@@ -12,7 +12,8 @@
   },
   "keywords": [
     "systemjs",
-    "jspm"
+    "jspm",
+    "handlebars"
   ],
   "author": "davis",
   "license": "ISC",
@@ -21,15 +22,13 @@
   },
   "homepage": "https://github.com/davis/plugin-hbs#readme",
   "jspm": {
-    "main": "hbs",
-    "directories": {},
+    "name": "hbs",
+    "main": "hbs.js",
     "dependencies": {
-      "handlebars": "github:components/handlebars.js@^4.0.2"
+      "handlebars": "github:components/handlebars.js@^4.0.5"
     },
     "devDependencies": {
-      "babel": "npm:babel-core@^5.4.3",
-      "babel-runtime": "npm:babel-runtime@^5.4.3",
-      "core-js": "npm:core-js@^0.9.10"
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.11"
     }
   }
 }
