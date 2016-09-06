@@ -4,13 +4,20 @@ import Handlebars from 'handlebars';
 
 export function translate(load) {
   let precompiled = Handlebars.precompile(load.source);
+  let handlebarsRuntimePath = 'handlebars/handlebars.runtime.js';
+
+  // in builds we want to embed the canonical name for the handlebars runtime
+  if (System.getCanonicalName) {
+    handlebarsRuntimePath = System.getCanonicalName(handlebarsRuntimePath);
+  }
+
   let output;
   if (load.metadata.format === 'esm') {
-    output = `import {Handlebars} from 'handlebars/handlebars.runtime.js'; \n export default Handlebars.template(${precompiled});`;
+    output = `import {Handlebars} from '${handlebarsRuntimePath}'; \n export default Handlebars.template(${precompiled});`;
   } else if (load.metadata.format === 'amd') {
-    output = `define(['handlebars/handlebars.runtime.js'], function(Handlebars) { return Handlebars.template(${precompiled}); });`;
+    output = `define(['${handlebarsRuntimePath}'], function(Handlebars) { return Handlebars.template(${precompiled}); });`;
   } else {
-    output = `var Handlebars=require('handlebars/handlebars.runtime.js'); \n module.exports = Handlebars.template(${precompiled});`;
+    output = `var Handlebars=require('${handlebarsRuntimePath}'); \n module.exports = Handlebars.template(${precompiled});`;
   }
   load.source = output;
   return output;
