@@ -1,5 +1,5 @@
 # plugin-hbs
-Handlebars template loader plugin for SystemJS
+Handlebars template loader plugin for [SystemJS](https://github.com/systemjs/systemjs)
 
 ## Installation
 
@@ -36,6 +36,8 @@ export default ItemView.extend({
   initialize() {}
 });
 ```
+
+> Note: you should keep your template filenames unique so that you can use [Rollup](http://rollupjs.org/) during static builds!
 
 ### How to use helpers
 To use helpers, be sure to use the Handlebars runtime. You'll need to have Handlebars installed in your project.
