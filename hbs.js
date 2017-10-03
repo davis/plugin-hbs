@@ -13,7 +13,7 @@ export function translate(load) {
 
   let output;
   if (load.metadata.format === 'esm') {
-    output = `import {Handlebars} from '${handlebarsRuntimePath}'; \n export default Handlebars.template(${precompiled});`;
+    output = `import Handlebars from '${handlebarsRuntimePath}'; \n export default Handlebars.template(${precompiled});`;
   } else if (load.metadata.format === 'amd') {
     output = `define(['${handlebarsRuntimePath}'], function (Handlebars) { return Handlebars.template(${precompiled}); });`;
   } else {
